@@ -5,7 +5,7 @@ The `.csproj` in `repro-nuget-feed-auth-issue` has a dependency on the package `
 ## Setup
 
 - Create feed `internal-sample-feed` in your org
-- Replace `{your-org}` in `nuget.config`s
+- Replace `{your-org}` in `nuget.config`s or whole URL in case of Azure DevOps server
 - Create repositories for the two projects and add the respective code within them
 - Create pipelines based on `pipeline.yml` within the project folders
 - Publish `dependency-a` by running its pipeline
