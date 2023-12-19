@@ -1,0 +1,21 @@
+trigger:
+  paths:
+    include:
+      - '*'
+  branches:
+    include:
+      - '*'
+
+steps:
+- task: NuGetAuthenticate@1
+- task: DotNetCoreCLI@2
+  displayName: dotnet pack
+  inputs:
+    command: pack
+    projects: '**/*.csproj'
+- task: DotNetCoreCLI@2
+  displayName: dotnet nuget push
+  inputs:
+    command: push
+    feedPublish: internal-sample-feed
+    nuGetFeedType: internal
